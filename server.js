@@ -29,7 +29,7 @@ app.post('/download', (req, res) => {
 
     // Use yt-dlp to download the playlist
     // Format the output to create a directory based on the playlist name
-    const command = `yt-dlp -o "${downloadsPath}/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" ${playlistUrl}`;
+    const command = `./bin/yt-dlp -o "${downloadsPath}/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" ${playlistUrl}`;
 
     exec(command, (error, stdout, stderr) => {
         if (error) {
